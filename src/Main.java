@@ -7,6 +7,5 @@ public class Main {
         taskManager.start();
 
 
-        System.out.println("Hello world!");
     }
 }

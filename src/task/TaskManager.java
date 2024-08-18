@@ -5,6 +5,8 @@ import contact.Contact;
 import java.util.Scanner;
 
 public class TaskManager {
+  public Task[] taskArray= new Task[10];
+  public  int currentIndex=0;
 
 
     public  void start(){
@@ -16,7 +18,8 @@ public class TaskManager {
 
             switch (n){
                 case 1 :
-
+                    Task task=addTask();
+                    addToArray(task);
                     break;
                 case 2 :
 
@@ -36,6 +39,35 @@ public class TaskManager {
             }
         }
 
+
+    }
+  public void addToArray(Task task){
+        if (taskArray.length==currentIndex){
+            Task[] newArray=new Task[taskArray.length*2];
+            for (int i=0;i<taskArray.length;i++){
+                newArray[i]=taskArray[i];
+            }
+            taskArray=newArray;
+        }
+        taskArray[currentIndex]=task;
+        currentIndex++;
+
+  }
+    public  Task addTask(){
+        Scanner scanner=new Scanner(System.in);
+
+        System.out.print("Enter Title: ");
+        String title=scanner.next();
+
+        System.out.print("Enter content: ");
+        String content=scanner.next();
+
+        Task task=new Task();
+        task.setContent(content);
+        task.setTitle(title);
+
+
+        return  task;
 
     }
     public  void menu(){
