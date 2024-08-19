@@ -27,7 +27,7 @@ public class TaskManager {
                     break;
                 case 3 :
                     String title=getTaskTitle();
-                   changeStatusByTitle(title);
+                    changeStatusByTitle(title);
                     break;
                 case 4 :
                     int id =getTaskId();
@@ -46,6 +46,30 @@ public class TaskManager {
 
 
     }
+    public  String getTaskTitle(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Inserting Title: ");
+        String title=scanner.next();
+        return title;
+    }
+    public void changeStatusByTitle(String title){
+
+        boolean errorStatus=true;
+        for (Task t:taskArray){
+            if (t!=null && t.getTitle().equals(title)){
+                errorStatus=false;
+                if (t.getStatus().equals("ACTIVE")){
+                    t.setStatus("DONE");
+                }else {
+                    t.setStatus("ACTIVE");
+                }
+            }
+        }
+        if (errorStatus){
+            System.out.println("title not found");
+        }
+    }
+
     public  int getTaskId(){
         Scanner scanner=new Scanner(System.in);
         System.out.print("Insert Id: ");
@@ -69,6 +93,7 @@ public class TaskManager {
             System.out.println("id not found");
         }
     }
+
     public void printAllTask(){
         System.out.printf("------------------------------------------------------------------------------%n");
         System.out.printf("|                          Task List                                         |%n");
@@ -99,30 +124,8 @@ public class TaskManager {
             System.out.println("active tasks not found");
         }
     }
-    public  String getTaskTitle(){
-    Scanner scanner=new Scanner(System.in);
-    System.out.print("Inserting Title: ");
-    String title=scanner.next();
-    return title;
-}
-    public void changeStatusByTitle(String title){
 
-        boolean errorStatus=true;
-        for (Task t:taskArray){
-            if (t!=null && t.getTitle().equals(title)){
-                errorStatus=false;
-                if (t.getStatus().equals("ACTIVE")){
-                    t.setStatus("DONE");
-                }else {
-                    t.setStatus("ACTIVE");
-                }
-            }
-        }
-        if (errorStatus){
-          System.out.println("title not found");
-        }
-    }
-  public void addToArray(Task task){
+    public void addToArray(Task task){
       task.setStatus("ACTIVE");
       task.setId(generalId++);
 
