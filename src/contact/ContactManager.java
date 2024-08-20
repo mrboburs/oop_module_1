@@ -1,5 +1,7 @@
 package contact;
 
+import task.Task;
+
 import java.util.Scanner;
 
 public class ContactManager {
@@ -86,12 +88,19 @@ public class ContactManager {
     }
 
     public void printContact(){
-        for (Contact c: contactArray){
-            if (c!=null){
-                System.out.println(c.getName()+"  "+c.getPhone());
-            }
+        System.out.printf("-----------------------------------------------------------------%n");
+        System.out.printf("|                          Contact List                          |%n");
+        System.out.printf("------------------------------------------------------------------%n");
+        System.out.printf("| %-20s | %-20s |%n", "Name", "Phone");
 
+        for (Contact contact:contactArray){
+            if (contact!=null){
+
+                System.out.printf("| %-20s | %-20s |%n",
+                        contact.getName() ,contact.getPhone());
+            }
         }
+        System.out.printf("-------------------------------------------------------------------%n");
     }
 
     public  boolean isValidContact(Contact contact){
