@@ -1,13 +1,13 @@
 package task;
 
 public class Task {
-private  int id;
+private  Integer id;
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

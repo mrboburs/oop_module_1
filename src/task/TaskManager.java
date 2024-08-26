@@ -6,16 +6,16 @@ import java.util.Scanner;
 
 public class TaskManager {
   public Task[] taskArray= new Task[10];
-  public  int currentIndex=0;
-  public  int generalId=1;
+  public  Integer currentIndex=0;
+  public  Integer generalId=1;
 
 
     public  void start(){
-        boolean b=true;
+        Boolean b=true;
         while (b){
             menu();
 
-            int n= getMenuNumber();
+            Integer n= getMenuNumber();
 
             switch (n){
                 case 1 :
@@ -54,7 +54,7 @@ public class TaskManager {
     }
     public void changeStatusByTitle(String title){
 
-        boolean errorStatus=true;
+        Boolean errorStatus=true;
         for (Task t:taskArray){
             if (t!=null && t.getTitle().equals(title)){
                 errorStatus=false;
@@ -70,7 +70,7 @@ public class TaskManager {
         }
     }
 
-    public  int getTaskId(){
+    public  Integer getTaskId(){
         Scanner scanner=new Scanner(System.in);
         System.out.print("Insert Id: ");
         int id=scanner.nextInt();
@@ -78,7 +78,7 @@ public class TaskManager {
     }
     public void changeStatusById(int id){
 
-        boolean errorStatus=true;
+        Boolean errorStatus=true;
         for (Task t:taskArray){
             if (t!=null && t.getId()==id){
                 errorStatus=false;
@@ -110,7 +110,7 @@ public class TaskManager {
         System.out.printf("------------------------------------------------------------------------------%n");
     }
     public void printActiveTasks(){
-        boolean errorStatus=true;
+        Boolean errorStatus=true;
         for (Task task:taskArray){
             if (task!=null&& task.getStatus().equals("ACTIVE")){
                errorStatus=false;
@@ -131,7 +131,7 @@ public class TaskManager {
 
         if (taskArray.length==currentIndex){
             Task[] newArray=new Task[taskArray.length*2];
-            for (int i=0;i<taskArray.length;i++){
+            for (Integer i=0;i<taskArray.length;i++){
                 newArray[i]=taskArray[i];
             }
             taskArray=newArray;
@@ -170,7 +170,7 @@ public class TaskManager {
 
 
     }
-    public   int getMenuNumber(){
+    public   Integer getMenuNumber(){
         System.out.print("Choose Menu: ");
         Scanner scanner=new Scanner(System.in);
         return scanner.nextInt();

@@ -7,14 +7,14 @@ import java.util.Scanner;
 public class ContactManager {
 
       Contact [] contactArray= new Contact[2];
-      int currentIndex=0;
+      Integer currentIndex=0;
 
     public  void start(){
-        boolean b=true;
+        Boolean b=true;
         while (b){
             menu();
 
-            int n= getMenuNumber();
+            Integer n= getMenuNumber();
 
             switch (n){
                 case 1 :
@@ -43,7 +43,7 @@ public class ContactManager {
 
     }
 
-    public   boolean isPhoneExist(String phone){
+    public   Boolean isPhoneExist(String phone){
         for (Contact contact :contactArray){
 
             if (contact!=null && contact.getPhone().equals(phone) ){
@@ -58,7 +58,7 @@ public class ContactManager {
         return  scanner.next();
     }
     public void deleteContactFromArray(String phone){
-        for (int i=0;i<contactArray.length;i++){
+        for (Integer i=0;i<contactArray.length;i++){
             if (contactArray[i]!=null && contactArray[i].getPhone().equals(phone)){
                 contactArray[i]=null;
                 System.out.println("contact deleted!!!");
@@ -103,7 +103,7 @@ public class ContactManager {
         System.out.printf("-------------------------------------------------------------------%n");
     }
 
-    public  boolean isValidContact(Contact contact){
+    public  Boolean isValidContact(Contact contact){
         if (contact.getName()==null || contact.getName().trim().length()<2){
             System.out.println("invalid contact name");
             return  false;
@@ -172,7 +172,7 @@ public class ContactManager {
 
     }
 
-    public   int getMenuNumber(){
+    public   Integer getMenuNumber(){
         System.out.print("Choose Menu: ");
         Scanner scanner=new Scanner(System.in);
         return scanner.nextInt();
