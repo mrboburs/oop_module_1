@@ -1,6 +1,6 @@
 package contact;
 
-import task.Task;
+
 
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class ContactManager {
         while (b){
             menu();
 
-            Integer n= getMenuNumber();
+            Integer n= helper.Menu.getMenuNumber();
 
             switch (n){
                 case 1 :
@@ -172,10 +172,5 @@ public class ContactManager {
 
     }
 
-    public   Integer getMenuNumber(){
-        System.out.print("Choose Menu: ");
-        Scanner scanner=new Scanner(System.in);
-        return scanner.nextInt();
 
-    }
 }
