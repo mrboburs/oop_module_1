@@ -1,5 +1,6 @@
 import contact.ContactManager;
 
+import helper.ScannerUtil;
 import task.TaskManager;
 
 
@@ -12,7 +13,7 @@ import task.TaskManager;
         while (b){
             menu();
 
-            int n= helper.Menu.getMenuNumber();
+            int n= ScannerUtil.getMenuNumber();
 
             switch (n){
                 case 1 :

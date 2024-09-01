@@ -2,7 +2,11 @@ package task;
 
 
 
+import helper.ScannerUtil;
+
 import java.util.Scanner;
+
+import static helper.ScannerUtil.scanner;
 
 public class TaskManager {
   public Task[] taskArray= new Task[10];
@@ -15,7 +19,7 @@ public class TaskManager {
         while (b){
             menu();
 
-            Integer n= helper.Menu.getMenuNumber();
+            Integer n= ScannerUtil.getMenuNumber();
 
             switch (n){
                 case 1 :
@@ -47,9 +51,9 @@ public class TaskManager {
 
     }
     public  String getTaskTitle(){
-        Scanner scanner=new Scanner(System.in);
+
         System.out.print("Inserting Title: ");
-        String title=scanner.next();
+        String title= scanner.next();
         return title;
     }
     public void changeStatusByTitle(String title){
@@ -71,9 +75,9 @@ public class TaskManager {
     }
 
     public  Integer getTaskId(){
-        Scanner scanner=new Scanner(System.in);
+
         System.out.print("Insert Id: ");
-        int id=scanner.nextInt();
+        int id= scanner.nextInt();
         return  id;
     }
     public void changeStatusById(int id){
@@ -141,7 +145,7 @@ public class TaskManager {
 
   }
     public  Task addTask(){
-        Scanner scanner=new Scanner(System.in);
+
 
         System.out.print("Enter Title: ");
         String title=scanner.nextLine();

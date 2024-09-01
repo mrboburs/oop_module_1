@@ -2,7 +2,11 @@ package contact;
 
 
 
-import java.util.Scanner;
+import helper.ScannerUtil;
+
+
+
+import static helper.ScannerUtil.scanner;
 
 public class ContactManager {
 
@@ -14,7 +18,7 @@ public class ContactManager {
         while (b){
             menu();
 
-            Integer n= helper.Menu.getMenuNumber();
+            Integer n= ScannerUtil.getMenuNumber();
 
             switch (n){
                 case 1 :
@@ -54,7 +58,7 @@ public class ContactManager {
     }
     public  String deleteContactQuery(){
         System.out.print("Enter query: ");
-        Scanner scanner =new Scanner(System.in);
+
         return  scanner.next();
     }
     public void deleteContactFromArray(String phone){
@@ -82,7 +86,7 @@ public class ContactManager {
 
     public   String searchQuery(){
         System.out.print("Enter query: ");
-        Scanner scanner =new Scanner(System.in);
+
         return  scanner.next();
 
     }
@@ -146,7 +150,7 @@ public class ContactManager {
     }
 
     public  Contact addContact(){
-        Scanner scanner=new Scanner(System.in);
+
 
         System.out.print("Enter name: ");
         String name=scanner.next();
