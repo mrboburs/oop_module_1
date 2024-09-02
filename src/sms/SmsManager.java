@@ -37,7 +37,8 @@ public class SmsManager {
                     allSmsHistory();
                     break;
                 case 4 :
-
+                   String phoneNumber=deletePhoneInput();
+                   deleteSmsFromArray(phoneNumber);
                     break;
                 case 5:
 
@@ -51,6 +52,20 @@ public class SmsManager {
         }
 
 
+    }
+    public  String deletePhoneInput(){
+        System.out.print("Enter phone input: ");
+
+        return  scannerLine.nextLine();
+    }
+    public void deleteSmsFromArray(String phone){
+        for (Integer i=0;i<smsArray.length;i++){
+            if (smsArray[i]!=null && smsArray[i].getPhone().equals(phone)){
+                smsArray[i]=null;
+                System.out.println("sms deleted!!!");
+                break;
+            }
+        }
     }
     public   String getInputPhone(){
         System.out.print("Enter phone: ");
