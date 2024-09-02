@@ -106,7 +106,6 @@ public class TaskManager {
 
         for (Task task:taskArray){
             if (task!=null){
-
                 System.out.printf("| %-3s | %-15s | %-40s | %-6s |%n",
                         task.getId() ,task.getTitle(),task.getContent(),task.getStatus());
             }

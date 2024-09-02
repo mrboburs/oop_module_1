@@ -1,10 +1,6 @@
 package contact;
 
-
-
 import helper.ScannerUtil;
-
-
 
 import static helper.ScannerUtil.scanner;
 
